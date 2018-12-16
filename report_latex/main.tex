@@ -236,7 +236,7 @@ The other CCT topologies which can be used for similar purpose are Half-wave 12-
 \end{figure}
 
 \subsection*{Part b}
-We have simulated both Twelve Pulse Rectifier (can be seen from Figure) and Full Bridge Rectifier for same average output voltage values. The simulation results indicated at Figures 5 and 6. According to the findings, we observed that the ripple voltage decreased for 12 Pulse Rectifier. Because our load is purely resistive the same situation is valid for output load currents. In addition, we can say that the cost of twelve pulse rectifier construction will be more expensive because of delta-delta-wye connected transformers. The maximum output voltage and current -and hence RMS values- is higher for Full Bridge Rectifier.
+We have simulated both Twelve Pulse Rectifier (can be seen from Figure) and Full Bridge Rectifier for same average output voltage values. The simulation results indicated at Figures 11. According to the findings, we observed that the ripple voltage decreased for 12 Pulse Rectifier. Because our load is purely resistive the same situation is valid for output load currents. With same output voltage ratings full bridge rectifier has bigger voltage ripple at lower frequency (300 Hz). However, with 12 pulse rectifier we have less ripple at higher frequency which mean that passive filter size significantly reduce.(Capacitor and inductor size will increase with decreasing at cut-off frequency). In addition, we can say that the cost of twelve pulse rectifier construction will be more expensive because of delta-delta-wye connected transformers. However, THD of source side line current decreased with 12 pulse rectifier. Due to relative small voltage ripple, low THD and high output voltage rating (considering input AC voltage kept constant) make 12 pulse rectifiers (and even 18-24 pulse rectifiers) more suitable for HVDC applications.
 
 \begin{figure}[H]%
     \centering
@@ -246,9 +246,40 @@ We have simulated both Twelve Pulse Rectifier (can be seen from Figure) and Full
     \caption{Simulation results of 12 pulse rectifier}%
     \label{fig:example}%
 \end{figure}
+\begin{table}[H]
+\begin{tabularx}{\linewidth}{>{\parskip1ex}X@{\kern4\tabcolsep}>{\parskip1ex}X}
+\toprule
+\hfil\bfseries Full Bridge Rectifier
+&
+\hfil\bfseries 12 Pulse Rectifier
+\\\cmidrule(r{3\tabcolsep}){1-1}\cmidrule(l{-\tabcolsep}){2-2}
 
+%% PROS, seperated by empty line or \par
+Higher voltage ripple at lower ripple frequency (with same output voltage rating)\par
+No transformer needed.(pro)\par
+Less semiconductor device needed.(pro)\par
+Middle range DC applications. 
+&
 
+%% CONS, seperated by empty line or \par
+Lower voltage ripple and higher ripple frequency (pro)\par
+Passive filter (low-pass) size reduced (pro)\par
+Lower THD source side line current (pro) \par
+Transformer needed.(con)\par
+More semiconductor devices needed which increases cost and decreases robustness. (con)
+Good candidate for HVDC applications. 
 
+\\\bottomrule
+\end{tabularx}
+\caption{Comparison of 12 pulse and full bridge rectifier}
+\end{table}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width = 10cm]{thd_comparison.PNG}
+    \caption{THD values comparison with different topologies (4)}
+    \label{fig:my_label}
+\end{figure}
 \subsection*{References}
 [1][2][3] MOHAN, N. (2017). Power Electronics JOHN WILEY & Sons.
+[4](n.d.) Retrieved from http://keysan.me/presentations/ee463_other_converters.html#27
 \end{document}
